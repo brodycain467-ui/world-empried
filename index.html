@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empires of History</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HOME SCREEN -->
+  <div id="homeScreen">
+    <div style="text-align: center; padding: 40px;">
+      <div id="globe" style="font-size: 80px; margin-bottom: 20px;">🌍</div>
+      <h1>Empires of History</h1>
+      <p>Rule the world across different historical eras</p>
+      <button onclick="startSetup()" style="font-size: 18px; padding: 15px 30px;">Start Campaign</button>
+      <button onclick="openSettings()" style="font-size: 18px; padding: 15px 30px;">⚙️ Settings</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY SCREEN -->
+  <div id="difficultyScreen" class="hidden">
+    <div style="max-width: 600px; margin: 0 auto; padding: 40px; background: rgba(0, 0, 0, 0.6); border-radius: 10px;">
+      <h2>Select Difficulty</h2>
+      <button onclick="setDifficulty('easy')" style="width: 100%; margin: 10px 0; padding: 15px;">Easy - Get a head start!</button>
+      <button onclick="setDifficulty('medium')" style="width: 100%; margin: 10px 0; padding: 15px;">Medium - Balanced gameplay</button>
+      <button onclick="setDifficulty('hard')" style="width: 100%; margin: 10px 0; padding: 15px;">Hard - Challenge yourself</button>
+      <button onclick="setDifficulty('impossible')" style="width: 100%; margin: 10px 0; padding: 15px;">Impossible - Ultimate test</button>
+    </div>
+  </div>
+
+  <!-- ERA SCREEN -->
+  <div id="eraScreen" class="hidden">
+    <div style="max-width: 600px; margin: 0 auto; padding: 40px; background: rgba(0, 0, 0, 0.6); border-radius: 10px;">
+      <h2>Select Era</h2>
+      <div id="eraButtons" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;"></div>
+    </div>
+  </div>
+
+  <!-- NATION SCREEN -->
+  <div id="nationScreen" class="hidden">
+    <div style="max-width: 600px; margin: 0 auto; padding: 40px; background: rgba(0, 0, 0, 0.6); border-radius: 10px;">
+      <h2>Select Your Nation</h2>
+      <div id="nationButtons" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;"></div>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="gameScreen" class="hidden" style="width: 100%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-rows: auto 1fr auto; gap: 20px; height: 90vh; padding: 20px;">
+    
+    <!-- Top Bar -->
+    <div id="topBar" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; border: 1px solid #444;">
+      <div>
+        <label>Date</label>
+        <span id="dateDisplay">January 1, 117 AD</span>
+      </div>
+      <div>
+        <label>Nation</label>
+        <span id="nationDisplay">-</span>
+      </div>
+      <div>
+        <label>Treasury</label>
+        <span id="treasuryDisplay">💰 0</span>
+      </div>
+      <div>
+        <label>Approval</label>
+        <span id="approvalDisplay">😊 0%</span>
+      </div>
+    </div>
+
+    <!-- Map Area -->
+    <div id="map" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); border-radius: 5px; border: 2px solid #444; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #666;">
+      🗺️ Map (Coming Soon)
+    </div>
+
+    <!-- Action Panel -->
+    <div id="actionPanel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; border-top: 1px solid #444;">
+      <button onclick="advanceTime(1)">📅 +1 Month</button>
+      <button onclick="advanceTime(6)">📅 +6 Months</button>
+      <button onclick="advanceTime(12)">📅 +1 Year</button>
+      <button onclick="openMilitary()">⚔️ Military</button>
+      <button onclick="openDiplomacy()">🤝 Diplomacy</button>
+      <button onclick="openTrade()">💼 Trade</button>
+      <button onclick="startSetup()">🏠 Main Menu</button>
+    </div>
+  </div>
+
+  <!-- Load Scripts -->
+  <script src="js/eras.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
